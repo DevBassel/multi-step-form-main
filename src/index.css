@@ -1,0 +1,339 @@
+/* Small
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+} */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+  background-color: hsl(217, 100%, 97%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background: #fff;
+  padding: 15px;
+  height: 85vh;
+  width: 65vw;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.steps {
+  width: 30%;
+  background-image: url(./assets/images/bg-sidebar-desktop.svg);
+  background-size: cover;
+  background-position-y: 100%;
+  border-radius: 10px;
+  padding: 25px 25px;
+  color: #fff;
+}
+.step-data {
+  width: 52%;
+  height: 100%;
+  margin: auto;
+  padding: 40px 0;
+  position: relative;
+}
+.step {
+  display: flex;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.step.active .num {
+  background-color: hsl(206, 94%, 87%);
+  color: black;
+}
+.step .num {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-weight: bold;
+}
+.step h5 {
+  color: hsl(231, 11%, 63%);
+}
+.step h4 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 0.8em;
+}
+.st h1 {
+  color: hsl(213, 96%, 18%);
+}
+.st > p {
+  margin: 10px 0;
+  color: hsl(231, 11%, 63%);
+  font-size: 0.9em;
+}
+.st .form {
+  margin: 40px 0;
+}
+.st .form label {
+  color: hsl(213, 96%, 18%);
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.st .form div {
+  margin: 30px 0;
+}
+.st .form input {
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid hsl(231, 11%, 63%);
+  font-weight: bold;
+}
+.st .form input:focus {
+  outline: none;
+}
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+}
+.control button {
+  font-size: 16px;
+  border: none;
+  font-weight: bold;
+}
+.next {
+  background: hsl(213, 96%, 18%);
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px 26px;
+}
+.prev {
+  background: none;
+  color: hsl(231, 11%, 63%);
+}
+
+.plans {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 45px;
+}
+.plans .card {
+  width: calc(90% / 3);
+  border: 1px solid hsl(231, 11%, 63%);
+  padding: 10px 15px;
+  border-radius: 10px;
+  position: relative;
+}
+.plans .card.active {
+  background: hsl(231, 100%, 99%);
+  border: 1px solid hsl(243, 100%, 62%);
+}
+
+.plans .card h3 {
+  text-transform: capitalize;
+  color: hsl(213, 96%, 18%);
+  font-size: 1.1em;
+}
+.plans .card p {
+  margin-bottom: 5px;
+  padding-top: 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: hsl(231, 11%, 63%);
+}
+
+.plans .card img {
+  margin-bottom: 25px;
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+}
+.plans .card p:last-child {
+  color: hsl(213, 96%, 18%);
+  font-weight: normal;
+  font-size: 0.8em;
+}
+.switchArea {
+  background: hsl(229, 24%, 87%);
+  padding: 10px;
+  margin-top: 52px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.switchArea span {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: hsl(213, 96%, 18%);
+}
+.switch {
+  display: block;
+  background: hsl(213, 96%, 18%);
+  width: 44px;
+  height: 20px;
+  border-radius: 2rem;
+  margin: 0px 24px;
+  cursor: pointer;
+  position: relative;
+}
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  width: 15px;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+.switchArea.active .switch::after {
+  left: 25px;
+}
+span:last-child {
+  color: hsl(231, 11%, 63%);
+}
+.switchArea.active span:first-child {
+  color: hsl(231, 11%, 63%);
+}
+
+.switchArea.active span:last-child {
+  color: hsl(213, 96%, 18%);
+}
+
+.picks {
+  margin-top: 45px;
+}
+.ons {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid hsl(231, 11%, 63%);
+  align-items: center;
+}
+.ons .ons-info {
+  width: 100%;
+  text-align: left;
+  margin-left: 30px;
+}
+.ons input {
+  width: 24px;
+  height: 24px;
+}
+input[type="checkbox"] {
+  accent-color: hsl(243, 100%, 62%);
+}
+.ons.active {
+  background: hsla(228, 100%, 84%, 35%);
+  border: 1px solid hsl(243, 100%, 62%);
+}
+.ons h4 {
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 6px;
+}
+.ons p {
+  color: hsl(231, 11%, 63%);
+  font-size: 13px;
+}
+.ons span {
+  color: hsl(245, 48%, 45%);
+  display: block;
+  font-weight: bold;
+}
+.finsh {
+  background-color: hsl(229, 24%, 95%);
+  padding: 25px 25px 15px;
+  border-radius: 10px;
+  margin-top: 45px;
+}
+.finsh p {
+  color: hsl(231, 11%, 63%);
+}
+.finsh div,
+.finsh .serv > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-info {
+  padding-bottom: 13px;
+  border-bottom: 1px solid hsl(231, 11%, 63%);
+}
+.plan-info h4 {
+  color: hsl(213, 96%, 18%);
+  font-size: 1.1em;
+}
+.plan-info h4 p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: underline;
+  color: hsl(231, 11%, 63%);
+  cursor: pointer;
+}
+.plan-info p {
+  font-weight: bold;
+}
+.finsh .price {
+  color: hsl(213, 96%, 18%);
+}
+.finsh .serv {
+  display: block;
+}
+.finsh .serv > div {
+  padding: 15px 0 0px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0px 25px;
+}
+
+.total p{
+  color:hsl(231, 11%, 63%);
+}
+.total p.price{
+  color:hsl(245, 48%, 45%);
+  font-weight: bold;
+  font-size: 1.3em;
+}
