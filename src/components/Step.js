@@ -4,9 +4,9 @@ import { CountContxt } from "../context/CountContext";
 export default function Step(props) {
   const context = useContext(CountContxt);
 
-  console.log(context);
+  // console.log(context);
   return (
-    <div className={`step ${context.Count === +props.num ? "active" : ""}`}>
+    <div className={`step ${context.Count === +props.num  ? "active" : ""}`}>
       <div className="num">{props.num}</div>
       <div>
         <h5>STEP {props.num}</h5>

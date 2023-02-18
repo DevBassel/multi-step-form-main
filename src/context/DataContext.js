@@ -10,7 +10,7 @@ export default function DataProvider(props) {
     Plan: {},
     ons: [],
   });
- 
+
   function Add(val) {
     setData({ ...Data, ...val });
   }

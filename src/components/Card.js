@@ -3,9 +3,11 @@ export default function Card(props) {
   return (
     <>
       <img src={item.img} alt={item.palnName} />
+      <div>
       <h3>{item.name}</h3>
-      <p>${props.roule ? `${item.planY}/yr` : `${item.planMo}/mo`}</p>
-      <p>{props.roule ? "2 months free" : ""}</p>
+        <p>${props.roule ? `${item.planY}/yr` : `${item.planMo}/mo`}</p>
+        <p>{props.roule ? "2 months free" : ""}</p>
+      </div>
     </>
   );
 }

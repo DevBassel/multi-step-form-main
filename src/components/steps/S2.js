@@ -10,13 +10,17 @@ export default function S2() {
 
   const toggle = () => {
     setPlan(!Plan);
-    setActive(0);
 
     FormData.Add({
-      Plan: {},
+      Plan: {
+        ...FormData.Data.Plan,
+        roule: Plan ? "monthly" : "yearly",
+      },
+      ons: [],
     });
-    FormData.Add({ons: []});
   };
+  // console.log(FormData.Data.Plan);
+
   const select = (item) => {
     setActive(item.id);
 
@@ -25,11 +29,12 @@ export default function S2() {
         name: item.name,
         roule: Plan ? "yearly" : "monthly",
         id: item.id,
-        price: Plan? item.planY : item.planMo,
+        price: Plan ? item.planY : item.planMo,
       },
     });
   };
-  console.log(FormData.Data);
+
+  console.log(FormData.Data.Plan);
 
   return (
     <div className="st">

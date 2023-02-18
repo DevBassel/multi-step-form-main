@@ -5,9 +5,11 @@ import plans from "../plans";
 
 export default function S3() {
   const FormData = useContext(DataContext);
-  const active = FormData.Data.ons;
+  const active =FormData.Data.ons
   const PlanRoule = FormData.Data.Plan.roule === "monthly";
   const plan = PlanRoule ? plans.ons.monthly : plans.ons.yearly;
+
+
 
   const select = (item) => {
     if (!active.includes(item)) {
@@ -15,6 +17,7 @@ export default function S3() {
     } else {
       let index = active.indexOf(item);
       let del = active.splice(index, 1);
+
       FormData.Add({ ons: active.filter(() => item !== del) });
     }
   };
@@ -25,7 +28,7 @@ export default function S3() {
       <h1>Pick add-ons</h1>
       <p>Add-ons help enhance your gaming experience.</p>
       <div className="picks">
-        {plan.map((item) => {
+        {plan.map((item, i) => {
           return (
             <div
               onClick={() => select(item)}

@@ -1,5 +1,5 @@
 export default function Ons(props) {
-  console.log("props", props.list);
+  console.log("props", props.checked);
 
   return (
     <>

@@ -1,21 +1,3 @@
-/* Small
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-} */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
 html {
   scroll-behavior: smooth;
@@ -61,6 +43,27 @@ body {
   margin: auto;
   padding: 40px 0;
   position: relative;
+}
+.step-data div {
+  animation: see 0.7s ease-in-out;
+}
+.req::after {
+  content: "this field is required";
+  color: red;
+  position: absolute;
+  right: 0;
+  font-size: 0.8em;
+}
+.req + input {
+  border: 1px solid red !important;
+}
+@keyframes see {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .step {
   display: flex;
@@ -156,6 +159,7 @@ body {
   padding: 10px 15px;
   border-radius: 10px;
   position: relative;
+  cursor: pointer;
 }
 .plans .card.active {
   background: hsl(231, 100%, 99%);
@@ -247,6 +251,7 @@ span:last-child {
   margin-bottom: 15px;
   border: 1px solid hsl(231, 11%, 63%);
   align-items: center;
+  cursor: pointer;
 }
 .ons .ons-info {
   width: 100%;
@@ -309,6 +314,11 @@ input[type="checkbox"] {
   text-decoration: underline;
   color: hsl(231, 11%, 63%);
   cursor: pointer;
+  width: fit-content;
+}
+.plan-info h4 p:hover {
+  color: hsl(245, 48%, 45%);
+  font-weight: bold;
 }
 .plan-info p {
   font-weight: bold;
@@ -329,11 +339,102 @@ input[type="checkbox"] {
   padding: 0px 25px;
 }
 
-.total p{
-  color:hsl(231, 11%, 63%);
+.total p {
+  color: hsl(231, 11%, 63%);
 }
-.total p.price{
-  color:hsl(245, 48%, 45%);
+.total p.price {
+  color: hsl(245, 48%, 45%);
   font-weight: bold;
   font-size: 1.3em;
+}
+
+.conform {
+  text-align: center;
+  width: 100%;
+  line-height: 1.5;
+  margin-top: 50%;
+  transform: translateY(-50%);
+}
+.rm{
+  display: none;
+}
+.conform h1 {
+  color: hsl(213, 96%, 18%);
+}
+
+.conform p {
+  color: hsl(231, 11%, 63%);
+}
+
+@media (max-width: 767px) {
+  .steps {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../src/assets/images/bg-sidebar-mobile.svg");
+    height: 170px;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 120px;
+  }
+  .step div:not(.num) {
+    display: none;
+  }
+  .num {
+    transform: scale(1.3);
+  }
+  .container {
+    width: 100%;
+    margin: auto;
+    background: transparent;
+  }
+  .step-data {
+    width: 100%;
+    background: #fff;
+    border-radius: 13px;
+    margin-top: 35px;
+    padding: 30px 15px;
+    position: static;
+    height: fit-content;
+    z-index: 99;
+  }
+  .req::after {
+    right: 20px;
+  }
+  .control {
+    left: 0;
+    padding: 15px 30px;
+    bottom: -55px;
+    background: #fff;
+  }
+  .plans {
+    flex-direction: column;
+  }
+  .switchArea {
+    margin-top: 10px;
+  }
+  .plans .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .plans .card img {
+    margin: 0;
+  }
+  .plans .card > div {
+    width: 80%;
+  }
+  .plans .card > div p {
+    margin: 0;
+    padding: 5px 0 0 0;
+  }
+  .conform {
+    display: block;
+    padding: 50px 10px;
+  }
 }
